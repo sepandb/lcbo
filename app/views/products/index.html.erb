@@ -1,7 +1,16 @@
-<% @products['result'].each do |product| %>
+<h1>LCBO</h1>
+<%= link_to "All Stores", stores_path %>
+
+<h2>Products</h2>
+<table>
+<% @products['result'].sort{|a,b| a['name'] <=> b['name']}.each do |product| %>
   <section>
-    <%= link_to product['name'], product_path(product['id']) %>
-    <%= format_price product['price_in_cents'] %>
-    <%= product['primary_category'] %>
+  <tr>
+    <td><%= link_to product['name'], product_path(product['id']) %></td>
+    <td>  $<%= format_price product['price_in_cents'] %></td>
+    <td>  <%= product['primary_category'] %></td>
+     <td>  <%= link_to "Check Inventory", inventory_path(product['id']) %></td>
+    </tr>
   </section>
-<% end %>
+ <% end %>
+  </table>

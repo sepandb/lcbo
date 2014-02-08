@@ -1,9 +1,11 @@
 <h1><%= @product['name'] %></h1>
 
+<% @product = @product.sort  %>
 <table>
 	<% @product.each do |key, value| %>
 		<tr>
 		<td><%= "#{key.titleize}"%></td> <td> <%= "#{value}" %></td>
 		</tr>
 	<% end %>
+
 </table>

@@ -1,0 +1,15 @@
+<h1>Inventory of <%= @inventory['product']['name'] %></h1>
+
+<table>
+<tr>
+	<th>Store Id</th>
+	<th id="quantity">Quantity</th>
+</tr>
+<% @inventory['result'].each do |i| %>
+<tr>
+	<td><%= i["store_id"] %></td>
+	<td id="quantities"><%= i["quantity"] %></td>
+</tr>
+<% end %>
+
+</table>

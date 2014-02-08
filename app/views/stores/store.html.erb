@@ -1,0 +1,10 @@
+<% @store = @store['result'] %>
+
+<h1>Store: <%=  @store["name"] %></h1>
+<table>
+<% @store.each do |key, value| %>
+<tr>
+	<td><%= "#{key}: #{value}" %></td>
+</tr>
+<% end  %>
+</table>
